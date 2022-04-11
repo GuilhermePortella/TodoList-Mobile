@@ -9,9 +9,8 @@ const styles = StyleSheet.create({
         borderBottomColor: '#EE6B26',
         alignItems: 'center',
         justifyContent: 'center',
-        position: 'absolute',
-        bottom: '89%'
-    },
+        marginTop: '10%'
+},
     logo: {
         width: 100,
         height: 30
