@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native';
 
 import styles from './styles';
 
@@ -14,12 +14,19 @@ import api from '../../services/api';
 export default function Home() {
     const [filter, serFilter] = useState('today');
     const [tasks, setTasks] = useState([]);
+    const [load, setLoad] = useState(false);
 
-async function loadTasks() {
-    await api.get('/task/filter/all/11:11:11:11:11:11').then(response => {
-        setTasks(response.data)
-    });
-}
+    async function loadTasks() {
+        setLoad(true)
+        await api.get('/task/filter/all/11:11:11:11:11:11').then(response => {
+            setTasks(response.data)
+            setLoad(false);
+        });
+    }
+
+    useEffect(() => {
+        loadTasks();
+    }, [])
 
     return (
         <View style={styles.container}>
@@ -65,25 +72,18 @@ async function loadTasks() {
             </View>
 
             <ScrollView style={styles.content} contentContainerStyle={{ alignItems: 'center' }}>
-                <TaskCard done={true} />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
+                {
+                    load 
+                    ? 
+                    <ActivityIndicator color='#EE6B26' size={50}/>
+                    : 
+                    tasks.map(t => (
+                        <TaskCard done={false} />
+                    ))
+                }
             </ScrollView>
             <Footer icon={'add'} />
         </View>
     )
+
 }
