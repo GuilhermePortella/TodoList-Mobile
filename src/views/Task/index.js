@@ -16,6 +16,7 @@ import styles from './styles';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import typeIcons from "../../utils/typeIcons";
+import DateTimeInput from "../../components/DataTimeInput/index.android";
 
 export default function Task() {
     const [done, setDone] = useState(false);
@@ -41,6 +42,9 @@ export default function Task() {
                 <Text style={styles.label}>Detalhes</Text>
                 <TextInput style={styles.inputarea} maxLength={200} multiline={true} placeholder={"Detalhes da atividade que eu tenho que lembrar ..."}/>
                 
+                    <DateTimeInput type={'date'}/>
+                    <DateTimeInput type={'hour'}/>
+
                 <View style={styles.inLine}>
                     <View style={styles.inputInline}>
                         <Switch onValueChange={() => setDone(!done)} value={done} thumbColor={ done ? '#00761B':'#EE6b26' }/>
