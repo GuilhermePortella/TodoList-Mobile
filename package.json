@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "node-fetch": "2.6.1"
+    "node-fetch": ">=2.6."
   },
   "private": true
 }
