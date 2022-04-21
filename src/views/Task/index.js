@@ -43,7 +43,7 @@ export default function Task() {
                 
                 <View style={styles.inLine}>
                     <View style={styles.inputInline}>
-                        <Switch onValueChange={() => setDone(!done)} value={done}/>
+                        <Switch onValueChange={() => setDone(!done)} value={done} thumbColor={ done ? '#00761B':'#EE6b26' }/>
                         <Text style={styles.switchLabel}>
                             Concluido
                         </Text>
