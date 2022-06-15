@@ -7,8 +7,7 @@ import {
   Alert
 } from 'react-native';
 
-import {BarCodeScanner} from 'expo-barcode-scanner';
-import * as NetWork from 'expo-network';
+
  
 import styles from './styles';
 
