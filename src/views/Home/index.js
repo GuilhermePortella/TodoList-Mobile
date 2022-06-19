@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native';
-import * as Network from 'expo-network';
+
 import styles from './styles';
 
 // COMPONENTES

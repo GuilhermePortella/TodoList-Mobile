@@ -11,7 +11,7 @@ import {
   Alert,
   ActivityIndicator
 } from 'react-native';
-import * as Network from 'expo-network';
+
 
 import styles from './styles';
 
@@ -21,7 +21,7 @@ import api from '../../services/api';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import typeIcons from '../../utils/typeIcons';
-import DateTimeInput from '../../components/DateTimeInput';
+
 
 export default function Task({ navigation }){
   const [id, setId] = useState();
