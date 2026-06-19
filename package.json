@@ -10,18 +10,18 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "axios": "^1.15.0",
+    "axios": "^1.16.0",
     "date-fns": "^2.28.0",
-    "expo": "~54.0.31",
+    "expo": "~56.0.9",
     "expo-status-bar": "~1.2.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-native": "0.82.1",
+    "react-native": "0.86.0",
     "react-native-material-design": "^0.3.7",
     "react-native-web": "0.17.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
+    "@babel/core": "^7.29.6",
     "node-fetch": "2.6.7"
   },
   "private": true
